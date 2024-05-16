@@ -5,55 +5,27 @@
 class Codezero < Formula
   desc "Collaborative Local Microservices Development."
   homepage "https://codezero.io/"
-  version "3.0.1"
+  version "3.0.3"
+  depends_on :macos
 
-  on_macos do
-    on_intel do
-      url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "a731b2beb3e8349b7befbce62a3b7159e85b82c8272fadf7de39b2c3fb4d284f"
+  on_intel do
+    url "https://storage.googleapis.com/c6o-releases-staging/3.0.3/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
+    sha256 "ef0c1e11b15368c1573b3251112ff382f42fbf55e77101b320500a804de6d91c"
 
-      def install
-        bin.install "czctl"
-        bin.install "czdaemon"
-        bin.install "czsupervisor"
-      end
-    end
-    on_arm do
-      url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "bda09b68ea87a02a637267bda04824b2a135022b21b1844cc13d2b514d86b7ec"
-
-      def install
-        bin.install "czctl"
-        bin.install "czdaemon"
-        bin.install "czsupervisor"
-      end
+    def install
+      bin.install "czctl"
+      bin.install "czdaemon"
+      bin.install "czsupervisor"
     end
   end
+  on_arm do
+    url "https://storage.googleapis.com/c6o-releases-staging/3.0.3/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
+    sha256 "e2badf7c4ee854e76b7beb58545a08925fa207007e6b57eb6efa5913b555404d"
 
-  on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "5f6c7808a70f7ed5a571fc3c103c7073b87570f5610f453fb25a9fc32adf5adf"
-
-        def install
-          bin.install "czctl"
-          bin.install "czdaemon"
-          bin.install "czsupervisor"
-        end
-      end
-    end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "fb4cb92efb691fc45dbecb18a94d4fd071d28ff6359ed8284206014a0da1dfe0"
-
-        def install
-          bin.install "czctl"
-          bin.install "czdaemon"
-          bin.install "czsupervisor"
-        end
-      end
+    def install
+      bin.install "czctl"
+      bin.install "czdaemon"
+      bin.install "czsupervisor"
     end
   end
 
