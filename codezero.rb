@@ -10,7 +10,7 @@ class Codezero < Formula
   on_macos do
     on_intel do
       url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "b440f3abcf9f9879f149e42858ac160be7b210a40e60ef89a8c0f098efa115b3"
+      sha256 "a731b2beb3e8349b7befbce62a3b7159e85b82c8272fadf7de39b2c3fb4d284f"
 
       def install
         bin.install "czctl"
@@ -20,7 +20,7 @@ class Codezero < Formula
     end
     on_arm do
       url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "537897f839c1c988df6411112f0f3fcdab5a1d594b39356000a44a64377143e4"
+      sha256 "bda09b68ea87a02a637267bda04824b2a135022b21b1844cc13d2b514d86b7ec"
 
       def install
         bin.install "czctl"
@@ -34,7 +34,7 @@ class Codezero < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "7e81ac8ec420e1d7907ea9bb69a807bf68b8148084e4f8cf3c01a7054fa8e2e8"
+        sha256 "5f6c7808a70f7ed5a571fc3c103c7073b87570f5610f453fb25a9fc32adf5adf"
 
         def install
           bin.install "czctl"
@@ -46,7 +46,7 @@ class Codezero < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "b4dc990cf6f32c8b01769e826f1f4a9ca66a23eb736d95637759f15471e6e02f"
+        sha256 "fb4cb92efb691fc45dbecb18a94d4fd071d28ff6359ed8284206014a0da1dfe0"
 
         def install
           bin.install "czctl"
