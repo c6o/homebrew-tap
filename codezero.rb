@@ -5,12 +5,12 @@
 class Codezero < Formula
   desc "Collaborative Local Microservices Development."
   homepage "https://codezero.io/"
-  version "3.0.0"
+  version "3.0.1"
 
   on_macos do
     on_intel do
-      url "https://storage.googleapis.com/c6o-releases-staging/3.0.0/headless-darwin-amd64.tgz", using: CurlDownloadStrategy
-      sha256 "5cb08627b6d9a0c1d3995095f51e1dd74ba5e1fc1cfc8c15b16a550bedca02f9"
+      url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-darwin-amd64.tgz", using: CurlDownloadStrategy
+      sha256 "f8b24d23ae4a0d6d802d7f44aa93dbaa9831e95bae3c97bbf704a67229df20ab"
 
       def install
         bin.install "czctl"
@@ -19,8 +19,8 @@ class Codezero < Formula
       end
     end
     on_arm do
-      url "https://storage.googleapis.com/c6o-releases-staging/3.0.0/headless-darwin-arm64.tgz", using: CurlDownloadStrategy
-      sha256 "7d9f10ac7a0c32b582482e4e0c718a325c7b905397161a25d54fc3e370a80f42"
+      url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-darwin-arm64.tgz", using: CurlDownloadStrategy
+      sha256 "3aa89e997e922ae949d4bb9ef9cae3389f7559fa38d19561ff463fb7c8d23fe9"
 
       def install
         bin.install "czctl"
@@ -33,8 +33,8 @@ class Codezero < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://storage.googleapis.com/c6o-releases-staging/3.0.0/headless-linux-amd64.tgz", using: CurlDownloadStrategy
-        sha256 "d963f87b3eb03f3b896770c8ae98547c59d0c956e029dba2b25bad82dfd19f9b"
+        url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-linux-amd64.tgz", using: CurlDownloadStrategy
+        sha256 "083f144ce65e7fade2fa1f847c09c884fc0af47877ab987ba7e69cf937e55c73"
 
         def install
           bin.install "czctl"
@@ -45,8 +45,8 @@ class Codezero < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://storage.googleapis.com/c6o-releases-staging/3.0.0/headless-linux-arm64.tgz", using: CurlDownloadStrategy
-        sha256 "136f79a5c3aa2ff435f28480f825e9809f928a7fbe498cb4070bf66ffd9d754b"
+        url "https://storage.googleapis.com/c6o-releases-staging/3.0.1/headless-linux-arm64.tgz", using: CurlDownloadStrategy
+        sha256 "45cde2ceae7c958ed8ab14e391f18db6ecfa5b237cfea4c65dfc9cbbc4f86740"
 
         def install
           bin.install "czctl"
