@@ -5,28 +5,62 @@
 class Codezero < Formula
   desc "Collaborative Local Microservices Development."
   homepage "https://codezero.io/"
-  version "3.0.3"
-  depends_on :macos
+  version "3.0.4"
 
-  on_intel do
-    url "https://storage.googleapis.com/c6o-releases-staging/3.0.3/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-    sha256 "ef0c1e11b15368c1573b3251112ff382f42fbf55e77101b320500a804de6d91c"
+  on_macos do
+    on_intel do
+      url "https://storage.googleapis.com/c6o-releases-staging/3.0.4/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "72283fb53ed72afa99062df35f050c9c083b7603dba63b192c3a7309a097fd46"
 
-    def install
-      bin.install "czctl"
-      bin.install "czdaemon"
-      bin.install "czsupervisor"
+      def install
+        bin.install "czctl"
+        bin.install "czdaemon"
+        bin.install "czsupervisor"
+      end
+    end
+    on_arm do
+      url "https://storage.googleapis.com/c6o-releases-staging/3.0.4/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "4a8cd109d79812869076c4f11345ff9731aaac6279e5b857e4ebebebec2a5fd1"
+
+      def install
+        bin.install "czctl"
+        bin.install "czdaemon"
+        bin.install "czsupervisor"
+      end
     end
   end
-  on_arm do
-    url "https://storage.googleapis.com/c6o-releases-staging/3.0.3/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-    sha256 "e2badf7c4ee854e76b7beb58545a08925fa207007e6b57eb6efa5913b555404d"
 
-    def install
-      bin.install "czctl"
-      bin.install "czdaemon"
-      bin.install "czsupervisor"
+  on_linux do
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://storage.googleapis.com/c6o-releases-staging/3.0.4/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "bb3d32f24cd6376fdd451941e2e0629748f9b4e728b28e4eb3fb2757730d9c32"
+
+        def install
+          bin.install "czctl"
+          bin.install "czdaemon"
+          bin.install "czsupervisor"
+        end
+      end
     end
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://storage.googleapis.com/c6o-releases-staging/3.0.4/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "bac8e5ed5b9a8389b08ea75f6c82ec46f61b353f20dd3501fef3fd48ad05378e"
+
+        def install
+          bin.install "czctl"
+          bin.install "czdaemon"
+          bin.install "czsupervisor"
+        end
+      end
+    end
+  end
+
+  def caveats
+    <<~EOS
+      Thanks for installing  czctl Codezero command tool!
+    EOS
   end
 
   test do
