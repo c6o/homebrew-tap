@@ -9,7 +9,7 @@ class Codezero < Formula
 
   on_macos do
     on_intel do
-      url "https://releases.codezero.io/2.3.2/headless-darwin-amd64.tgz", using: CurlDownloadStrategy
+      url "https://releases.codezero.io/2.3.2/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
       sha256 "34a62e476b00c4560d135d7aeb9e26726f355f35ef7a1034adbe63331d156c2d"
 
       def install
@@ -22,7 +22,7 @@ class Codezero < Formula
       end
     end
     on_arm do
-      url "https://releases.codezero.io/2.3.2/headless-darwin-arm64.tgz", using: CurlDownloadStrategy
+      url "https://releases.codezero.io/2.3.2/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
       sha256 "6ba01cee66591d77bd63a61312d81026972df76488d660c581f24afdfff0bfca"
 
       def install
@@ -39,7 +39,7 @@ class Codezero < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.3.2/headless-linux-amd64.tgz", using: CurlDownloadStrategy
+        url "https://releases.codezero.io/2.3.2/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
         sha256 "8b83ddb599db027c56ba72647241746064014c80ad5388fb421f5d75f0abf1c3"
 
         def install
@@ -54,7 +54,7 @@ class Codezero < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.3.2/headless-linux-arm64.tgz", using: CurlDownloadStrategy
+        url "https://releases.codezero.io/2.3.2/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
         sha256 "a1467ee21c1e3d53298377179e441fc143f86995ca99302077c875fce2d4e184"
 
         def install
