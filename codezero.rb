@@ -5,24 +5,30 @@
 class Codezero < Formula
   desc "Collaborative Local Microservices Development."
   homepage "https://codezero.io/"
-  version "2.3.1"
+  version "2.3.2"
 
   on_macos do
     on_intel do
-      url "https://storage.googleapis.com/c6o-releases/2.3.1/headless-darwin-amd64.tgz", using: CurlDownloadStrategy
-      sha256 "bc36f959f2386ba2fb7a99a4e258027745afa6a64b0a2e3d5a7d9958ca48fb21"
+      url "https://releases.codezero.io/2.3.2/headless-darwin-amd64.tgz", using: CurlDownloadStrategy
+      sha256 "34a62e476b00c4560d135d7aeb9e26726f355f35ef7a1034adbe63331d156c2d"
 
       def install
+        if File.exist?("/usr/local/bin/codezero")
+          raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
+        end
         bin.install "czctl"
         bin.install "czdaemon"
         bin.install "czsupervisor"
       end
     end
     on_arm do
-      url "https://storage.googleapis.com/c6o-releases/2.3.1/headless-darwin-arm64.tgz", using: CurlDownloadStrategy
-      sha256 "0bb57bf8953e6db9ecde4fa507498cb4751617b42938a194fc491fcafff93e1f"
+      url "https://releases.codezero.io/2.3.2/headless-darwin-arm64.tgz", using: CurlDownloadStrategy
+      sha256 "6ba01cee66591d77bd63a61312d81026972df76488d660c581f24afdfff0bfca"
 
       def install
+        if File.exist?("/usr/local/bin/codezero")
+          raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
+        end
         bin.install "czctl"
         bin.install "czdaemon"
         bin.install "czsupervisor"
@@ -33,10 +39,13 @@ class Codezero < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://storage.googleapis.com/c6o-releases/2.3.1/headless-linux-amd64.tgz", using: CurlDownloadStrategy
-        sha256 "5bde931c3340bc9fd7d0aa1a059cbb7fcb364ed14827236d06b6726aa5077a8c"
+        url "https://releases.codezero.io/2.3.2/headless-linux-amd64.tgz", using: CurlDownloadStrategy
+        sha256 "8b83ddb599db027c56ba72647241746064014c80ad5388fb421f5d75f0abf1c3"
 
         def install
+          if File.exist?("/usr/local/bin/codezero")
+            raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
+          end
           bin.install "czctl"
           bin.install "czdaemon"
           bin.install "czsupervisor"
@@ -45,10 +54,13 @@ class Codezero < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://storage.googleapis.com/c6o-releases/2.3.1/headless-linux-arm64.tgz", using: CurlDownloadStrategy
-        sha256 "e8ae01605db6188e6cd6ef7abd9bb185a290553882e88851b08396e57d6f46a5"
+        url "https://releases.codezero.io/2.3.2/headless-linux-arm64.tgz", using: CurlDownloadStrategy
+        sha256 "a1467ee21c1e3d53298377179e441fc143f86995ca99302077c875fce2d4e184"
 
         def install
+          if File.exist?("/usr/local/bin/codezero")
+            raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
+          end
           bin.install "czctl"
           bin.install "czdaemon"
           bin.install "czsupervisor"
@@ -59,7 +71,7 @@ class Codezero < Formula
 
   def caveats
     <<~EOS
-      Successfully installed Codezero 2.3.1
+      Successfully installed Codezero 2.3.2
       Run 'czctl --help' or launch the application to get started
 
       Docs: https://docs.codezero.io
