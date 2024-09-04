@@ -81,7 +81,7 @@ class Codezero < Formula
     end
   end
 
-  conflicts_with "codezero@beta"
+  conflicts_with "codezero-beta"
 
   def caveats
     <<~EOS
