@@ -81,6 +81,8 @@ class Codezero < Formula
     end
   end
 
+  conflicts_with "codezero@beta"
+
   def caveats
     <<~EOS
       Successfully installed Codezero 2.6.0
