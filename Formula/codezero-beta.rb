@@ -5,32 +5,36 @@
 class CodezeroBeta < Formula
   desc "Collaborative Local Microservices Development"
   homepage "https://codezero.io/"
-  version "2.7.0-beta1"
+  version "2.7.0-beta2"
 
   on_macos do
     on_intel do
-      url "https://releases.codezero.io/2.7.0-beta1/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "47c096e6b03dbe12a95d410ba0e66fcef92315c0ac6f89901e8c3cf9b4d47c12"
+      url "https://releases.codezero.io/2.7.0-beta2/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "8db05ab4c5a8eebc4d251ea9107513be3f3f81b81883b0101d3873306945e6b2"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
         end
         bin.install "czctl"
+        bin.install "czdaemon"
+        bin.install "czsupervisor"
         (bash_completion/"czctl").write `#{bin}/czctl completion bash`
         (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
         (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
       end
     end
     on_arm do
-      url "https://releases.codezero.io/2.7.0-beta1/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "18798fd8e9f16cf5666eebb9b1771d0ec51bceec7ada705868296f2b9bc3054c"
+      url "https://releases.codezero.io/2.7.0-beta2/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "fe7623dc4e89d701d6d51759e537edcadf90af9a3f8e17e4c9cff41cb4fa82c8"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
         end
         bin.install "czctl"
+        bin.install "czdaemon"
+        bin.install "czsupervisor"
         (bash_completion/"czctl").write `#{bin}/czctl completion bash`
         (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
         (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
@@ -41,14 +45,16 @@ class CodezeroBeta < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.7.0-beta1/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "f002c74a8500e7d9626bab668f63c62443b84da56feb31d9d7358a5d889124b9"
+        url "https://releases.codezero.io/2.7.0-beta2/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "c0af6c97049aa00f0514ce846afa55c3f3254846e2e550a2a4a9a4f1276357ad"
 
         def install
           if File.exist?("/usr/local/bin/codezero")
             raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
           end
           bin.install "czctl"
+          bin.install "czdaemon"
+          bin.install "czsupervisor"
           (bash_completion/"czctl").write `#{bin}/czctl completion bash`
           (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
           (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
@@ -57,14 +63,16 @@ class CodezeroBeta < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.7.0-beta1/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "92a0348bfb7c0d0ac08bb4557fdb55dd44c5e999486a56eccda27fbdb213f0d9"
+        url "https://releases.codezero.io/2.7.0-beta2/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "6db8182d6151a361cf0cf0b00290ca8ff50f20f9567ec1fb8b83ea9e5e2e2be8"
 
         def install
           if File.exist?("/usr/local/bin/codezero")
             raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
           end
           bin.install "czctl"
+          bin.install "czdaemon"
+          bin.install "czsupervisor"
           (bash_completion/"czctl").write `#{bin}/czctl completion bash`
           (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
           (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
@@ -77,7 +85,7 @@ class CodezeroBeta < Formula
 
   def caveats
     <<~EOS
-      Successfully installed Codezero 2.7.0-beta1
+      Successfully installed Codezero 2.7.0-beta2
       Run 'czctl help' or visit https://hub.codezero.io to get started
 
       Docs: https://docs.codezero.io
