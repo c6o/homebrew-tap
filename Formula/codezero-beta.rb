@@ -17,8 +17,6 @@ class CodezeroBeta < Formula
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
         end
         bin.install "czctl"
-        bin.install "czdaemon"
-        bin.install "czsupervisor"
         (bash_completion/"czctl").write `#{bin}/czctl completion bash`
         (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
         (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
@@ -33,8 +31,6 @@ class CodezeroBeta < Formula
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
         end
         bin.install "czctl"
-        bin.install "czdaemon"
-        bin.install "czsupervisor"
         (bash_completion/"czctl").write `#{bin}/czctl completion bash`
         (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
         (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
@@ -53,8 +49,6 @@ class CodezeroBeta < Formula
             raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
           end
           bin.install "czctl"
-          bin.install "czdaemon"
-          bin.install "czsupervisor"
           (bash_completion/"czctl").write `#{bin}/czctl completion bash`
           (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
           (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
@@ -71,8 +65,6 @@ class CodezeroBeta < Formula
             raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
           end
           bin.install "czctl"
-          bin.install "czdaemon"
-          bin.install "czsupervisor"
           (bash_completion/"czctl").write `#{bin}/czctl completion bash`
           (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
           (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
