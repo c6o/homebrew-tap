@@ -1,9 +1,9 @@
 cask "codezero-app@beta" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.7.0-beta3"
-  sha256 arm:   "36c0e0bbfa984731ca72993047db07ec342c3e47725131a2c7e702e28f9a9559",
-         intel: "bba2a043e8c80f1814fd96cd19f1afd4bbad85f72da73dd70b8ff06a04b5ed5e"
+  version "2.7.0-beta4"
+  sha256 arm:   "82270787e844b2c4455987a72f59515db5d0208a719f7fb0d3b82e2524daa3ed",
+         intel: "1a04b882549be2b223da55adbcf2bc2893b10388c72cb3db82dc2fe2ccd8400f"
 
   url "https://releases.codezero.io/app/darwin/arm64/Codezero-darwin-#{arch}-#{version}.zip"
   name "Codezero App"
@@ -14,4 +14,7 @@ cask "codezero-app@beta" do
   conflicts_with cask: "codezero-app"
 
   app "Codezero.app"
+
+  uninstall launchctl: "io.codezero.czctl",
+            quit:      "io.codezero.codezero" 
 end
