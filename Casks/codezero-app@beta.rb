@@ -10,7 +10,6 @@ cask "codezero-app@beta" do
   desc "Collaborative Local Microservices Development"
   homepage "https://codezero.io"
 
-  auto_updates true
   conflicts_with cask: "codezero-app"
 
   app "Codezero.app"
