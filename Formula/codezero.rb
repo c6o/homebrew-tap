@@ -10,7 +10,7 @@ class Codezero < Formula
   on_macos do
     on_intel do
       url "https://releases.codezero.io/2.7.1/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "870b24e02d311bddb52d29d484b34bbfebb4c40b483413bf9f3382e4d9c3295f"
+      sha256 "89402f8b5a9b2e79d844ddb577739d7b60e362143a27fd3e27b926c35b1e93a3"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -24,7 +24,7 @@ class Codezero < Formula
     end
     on_arm do
       url "https://releases.codezero.io/2.7.1/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "aa8fac74fd03c50b6e75538b73c97f5b84d2e9f2541c0ff6bcc9e22f32b70777"
+      sha256 "17c5eff69c1fb0815f3694734339f4329657e72ddc9462aec0cb97945acc1284"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -42,7 +42,7 @@ class Codezero < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://releases.codezero.io/2.7.1/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "9b47a49a1ec059706ba36c2a2cb8b9ffffb7160c8e6039d6ffee0c3d5a338860"
+        sha256 "82f9da4610b8573d4688ec956f390c1cb381f1b2c8dfe4c1d48b6231f98d5261"
 
         def install
           if File.exist?("/usr/local/bin/codezero")
@@ -58,7 +58,7 @@ class Codezero < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://releases.codezero.io/2.7.1/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "7410bcd928fb66d59fcab83d387e25fd0825c6df6448b8b4a4cfcfbad951fb6d"
+        sha256 "230b3d6a3e0c5e35d1bef7e529eb143e6410472dd6aea88b2baa0f03889b0138"
 
         def install
           if File.exist?("/usr/local/bin/codezero")
