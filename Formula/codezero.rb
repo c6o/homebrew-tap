@@ -5,12 +5,12 @@
 class Codezero < Formula
   desc "Collaborative Local Microservices Development"
   homepage "https://codezero.io/"
-  version "2.10.0"
+  version "2.11.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://releases.codezero.io/2.10.0/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "9981d70554bf2584882c8799cbd1a04c6793a29d9a3304a36d1bd695411381e2"
+      url "https://releases.codezero.io/2.11.0/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "6980f20d69dce717be90d500c32dd7055c9d710e7b401e315cb6871ea0f8b8b8"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -23,8 +23,8 @@ class Codezero < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://releases.codezero.io/2.10.0/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "2077cfde0152920f1fbf433d65fce9f0f0603c69056c8a092aa8dd9eb770ad6e"
+      url "https://releases.codezero.io/2.11.0/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "aa6ffb1f7fa0e1e854fdb537e5895211f21818d81e274dc6b844b85171ae6826"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -41,8 +41,8 @@ class Codezero < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.10.0/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "870e20c9de81c0495c393cca2e356943d990f044297b8da0d73835e592014cb4"
+        url "https://releases.codezero.io/2.11.0/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "37226ea7781026754b5cb7526249930747593d99bb0cd70de336ceba0431c035"
 
         def install
           if File.exist?("/usr/local/bin/codezero")
@@ -57,8 +57,8 @@ class Codezero < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.10.0/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "20070fada3e648a254d1a953a23b801130f54b49d405afaeb860c2d5c2667f75"
+        url "https://releases.codezero.io/2.11.0/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "c0bc4c93b8fe2dd8040eaf07e8afa4f571650bba7b8dd74db8d1d4f1a23d22b6"
 
         def install
           if File.exist?("/usr/local/bin/codezero")
@@ -77,7 +77,7 @@ class Codezero < Formula
 
   def caveats
     <<~EOS
-      Successfully installed Codezero 2.10.0
+      Successfully installed Codezero 2.11.0
       Run 'czctl help' or visit https://hub.codezero.io to get started
 
       Docs: https://docs.codezero.io
