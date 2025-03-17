@@ -11,8 +11,8 @@ cask "codezero-app" do
     homepage "https://codezero.io"
 
     conflicts_with cask: "codezero-app@beta"
-    conflicts_with "codezero"
-    conflicts_with "codezero-beta"
+    conflicts_with formula: "codezero"
+    conflicts_with formula: "codezero-beta"
 
     app "Codezero.app"
     binary "#{appdir}/Codezero.app/Contents/Resources/bin/czctl"
