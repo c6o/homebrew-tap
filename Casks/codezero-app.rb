@@ -10,9 +10,9 @@ cask "codezero-app" do
     desc "Collaborative Local Microservices Development"
     homepage "https://codezero.io"
 
-    conflicts_with cask: "codezero-app@beta", because: "both install `czctl`"
-    conflicts_with "codezero", because: "both install `czctl`"
-    conflicts_with "codezero-beta", because: "both install `czctl`"
+    conflicts_with cask: "codezero-app@beta"
+    conflicts_with "codezero"
+    conflicts_with "codezero-beta"
 
     app "Codezero.app"
     binary "#{appdir}/Codezero.app/Contents/Resources/bin/czctl"
