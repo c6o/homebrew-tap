@@ -1,16 +1,16 @@
 cask "codezero-app" do
     arch arm: "arm64", intel: "x64"
 
-    version "2.13.0"
-    sha256 arm:   "46ce2f0bedb60847f777fd3516e1c98215e96c178edc1e12324d5ac31cbf161c",
-           intel: "902d940e96088af496359865be496298b2c5ebba1fa58c01ecc9b975fab3a763"
+    version "2.14.0"
+    sha256 arm:   "6ce2379adb498b21daad1c51b6da20cfae91b9058ab0f0ae9f941608f9660749",
+           intel: "acdf2a0aa55cf1dda447887d19a6501d8367ad5e68bffae5f94eaaea6ab8dccf"
 
     url "https://releases.codezero.io/app/#{version}/Codezero-#{version}-#{arch}-mac.zip"
     name "Codezero App"
     desc "Collaborative Local Microservices Development"
     homepage "https://codezero.io"
 
-    conflicts_with cask: "codezero-app@beta", formula: ["codezero", "codezero-beta"]
+    conflicts_with cask: "codezero-app@beta", formula: 'codezero'
 
     app "Codezero.app"
     binary "#{appdir}/Codezero.app/Contents/Resources/bin/czctl"
