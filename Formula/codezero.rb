@@ -10,7 +10,7 @@ class Codezero < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://releases.codezero.io/2.17.0/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "bb37a35d8d32bfb6b00a82454e419349b08e2a9965ee0bbdeda528b2979db634"
+      sha256 "bcf078aea6185333a57a563764c92710a1389e5b0a72f1bfb2d1acd73b13c40a"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -24,7 +24,7 @@ class Codezero < Formula
     end
     if Hardware::CPU.arm?
       url "https://releases.codezero.io/2.17.0/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "c55ba5a4cdc97a4c955fa03ad0fe16e024ee6b7bbf55872abf4a9b9813683c77"
+      sha256 "57e1e130a2db93f248a07270e58e926a0129e69d8f4eccd5a513ed0f8c703e1a"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -41,7 +41,7 @@ class Codezero < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://releases.codezero.io/2.17.0/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "1d6bd12f5e593821b3d2e7a24f37925328182d29118f379be2b4168b8747624f"
+      sha256 "dc6e0acf2f89a7d5e50736105e3bac727f20e41a713da4030c6af0e5377f537c"
       def install
         if File.exist?("/usr/local/bin/codezero")
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
@@ -54,7 +54,7 @@ class Codezero < Formula
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://releases.codezero.io/2.17.0/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "c12aeda4e599d192dc3d84952560c26a26702ade5aecf1f70cc3cc05b7e624cb"
+      sha256 "856fa9217715ccd27629f6f2aca7fa74a86b1cc6c45581ffe4834880586cd0db"
       def install
         if File.exist?("/usr/local/bin/codezero")
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
