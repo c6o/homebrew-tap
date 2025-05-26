@@ -1,9 +1,9 @@
 cask "codezero-app" do
     arch arm: "arm64", intel: "x64"
 
-    version "2.17.1"
-    sha256 arm:   "9e39e8509bc2ab440b5df4252589f12cab5e4732f2cad1b2951429c06dc05828",
-           intel: "6fc4ed81f58645e110394935d959e39dbe533e2746e64baba4111da9b2b181df"
+    version "2.17.2"
+    sha256 arm:   "46465c093c53e6ec03951a00899aa8b59d340d1794e4a85201c51b6d4e5889f7",
+           intel: "e543d4b472c49fa264987efb969e8ffe4392b454afe2c4610466b387fe90a7c5"
 
     url "https://releases.codezero.io/app/#{version}/Codezero-#{version}-#{arch}-mac.zip"
     name "Codezero App"
