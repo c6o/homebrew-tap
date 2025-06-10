@@ -5,12 +5,12 @@
 class CodezeroBeta < Formula
   desc "Collaborative Local Microservices Development"
   homepage "https://codezero.io/"
-  version "2.7.3-beta5"
+  version "2.17.3-beta1"
 
   on_macos do
-    on_intel do
-      url "https://releases.codezero.io/2.7.3-beta5/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "e6dc3cf66f2e045da3e555e6838ed847f8a77839dff4a34337ca2242e37e6e54"
+    if Hardware::CPU.intel?
+      url "https://releases.codezero.io/2.17.3-beta1/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "8d7aa87cb90586d096286663de4111bc0eb6bb4ba08276a8f9817a0a8da12eba"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -22,9 +22,9 @@ class CodezeroBeta < Formula
         (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
       end
     end
-    on_arm do
-      url "https://releases.codezero.io/2.7.3-beta5/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "4817a0bd483d13df94b13907a4d56149d9987dbf03f3c95deb71ece36e4def5e"
+    if Hardware::CPU.arm?
+      url "https://releases.codezero.io/2.17.3-beta1/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "cb752f939de7e35e2e63f4a65045d09c54c779ea711e9370b431ebb4b6c6aece"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -39,36 +39,30 @@ class CodezeroBeta < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.7.3-beta5/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "6e12e760b12c3196491d24c8f4243c1c25fe857a4e9e382638f11da3733cfdba"
-
-        def install
-          if File.exist?("/usr/local/bin/codezero")
-            raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
-          end
-          bin.install "czctl"
-          (bash_completion/"czctl").write `#{bin}/czctl completion bash`
-          (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
-          (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://releases.codezero.io/2.17.3-beta1/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f194fcfc51cc082ff3b4bdddec9769f3c9682feeae9f52442929cb82cd6f3c7b"
+      def install
+        if File.exist?("/usr/local/bin/codezero")
+          raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
         end
+        bin.install "czctl"
+        (bash_completion/"czctl").write `#{bin}/czctl completion bash`
+        (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
+        (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://releases.codezero.io/2.7.3-beta5/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "080d3b8d38b102fc66dfae9da51cd328e7368cc3845a1979994c18546acadc98"
-
-        def install
-          if File.exist?("/usr/local/bin/codezero")
-            raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
-          end
-          bin.install "czctl"
-          (bash_completion/"czctl").write `#{bin}/czctl completion bash`
-          (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
-          (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://releases.codezero.io/2.17.3-beta1/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "d55e7b83e919897512d54c6808d94bde6e87ee9ef9acbdb0ee5cd1454830bd86"
+      def install
+        if File.exist?("/usr/local/bin/codezero")
+          raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
         end
+        bin.install "czctl"
+        (bash_completion/"czctl").write `#{bin}/czctl completion bash`
+        (fish_completion/"czctl.fish").write `#{bin}/czctl completion fish`
+        (zsh_completion/"_cztl").write `#{bin}/czctl completion zsh`
       end
     end
   end
@@ -77,7 +71,7 @@ class CodezeroBeta < Formula
 
   def caveats
     <<~EOS
-      Successfully installed Codezero 2.7.3-beta5
+      Successfully installed Codezero 2.17.3-beta1
       Run 'czctl help' or visit https://hub.codezero.io to get started
 
       Docs: https://docs.codezero.io
