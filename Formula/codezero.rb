@@ -5,12 +5,12 @@
 class Codezero < Formula
   desc "Collaborative Local Microservices Development"
   homepage "https://codezero.io/"
-  version "2.19.0"
+  version "2.20.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://releases.codezero.io/2.19.0/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "9a14095ab67ab9971e4629f8a3c29cdaa685a83af1c4a3dc901d5b2f36054a79"
+      url "https://releases.codezero.io/2.20.0/headless-darwin-amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "674cb3133b1fe81961f0608baa408dc208b64ef293651204645839bc6ae0dbdd"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -23,8 +23,8 @@ class Codezero < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://releases.codezero.io/2.19.0/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "e3170aa51738718c1976ef56ba56d8f4f79b8e38e3ec50d6a64aa71aab13a413"
+      url "https://releases.codezero.io/2.20.0/headless-darwin-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f53ac07a4cb58f8b118cd09b4ff89a6d9369d43f1a106ba6bd3aa9084f817cc9"
 
       def install
         if File.exist?("/usr/local/bin/codezero")
@@ -40,8 +40,8 @@ class Codezero < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://releases.codezero.io/2.19.0/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "18a26e43faa9a57fd4b760d8b4b787b77e06fe7190b341aad29bc8fdb2f190ad"
+      url "https://releases.codezero.io/2.20.0/headless-linux-amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "352917f056fa5fd3d30122989c4a83b495509ef12d2bad736ce1af0e4a7d14cf"
       def install
         if File.exist?("/usr/local/bin/codezero")
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
@@ -53,8 +53,8 @@ class Codezero < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://releases.codezero.io/2.19.0/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "cb1e39aa1df803f1bedc0b5c72476b8e785742491919c88761e0993f15103193"
+      url "https://releases.codezero.io/2.20.0/headless-linux-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "57b69459420af3427183096055bce5e5eebee3681e22cb052ff6f14462bd9637"
       def install
         if File.exist?("/usr/local/bin/codezero")
           raise "A version not installed by Homebrew has been detected. Please run the following command to uninstall it: curl -L https://releases.codezero.io/uninstall.sh | /bin/bash"
@@ -71,7 +71,7 @@ class Codezero < Formula
 
   def caveats
     <<~EOS
-      Successfully installed Codezero 2.19.0
+      Successfully installed Codezero 2.20.0
       Run 'czctl help' or visit https://hub.codezero.io to get started
 
       Docs: https://docs.codezero.io
